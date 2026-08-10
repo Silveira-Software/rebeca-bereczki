@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  scroll-behavior: auto; /* Lenis assume o controle */
+}
+
+body {
+  @apply bg-white-warm text-graphite font-body antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  @apply bg-accent-soft text-wine;
+}
+
+:focus-visible {
+  outline: 2px solid theme("colors.accent.DEFAULT");
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+h1, h2, h3 {
+  @apply font-display font-medium tracking-tight text-graphite;
+  line-height: 1.05;
+}
+
+@layer components {
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-body text-xs font-semibold uppercase tracking-[0.24em] text-accent-deep;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-7 bg-current opacity-60;
+  }
+
+  .lede {
+    @apply max-w-[42ch] text-md font-normal text-muted;
+  }
+
+  .italic-emotional {
+    @apply font-display italic font-normal;
+  }
+
+  .signature-pair {
+    @apply font-body text-xs font-bold uppercase tracking-[0.14em] text-old-rose;
+  }
+
+  .confirm-tag {
+    @apply text-xs italic text-muted/80;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-300 ease-soft;
+  }
+  .btn-primary {
+    @apply bg-wine text-white-warm shadow-card hover:-translate-y-0.5 hover:bg-accent-deep hover:shadow-soft;
+  }
+  .btn-outline {
+    @apply border border-old-rose bg-transparent text-wine hover:-translate-y-0.5 hover:bg-blush;
+  }
+  .btn-ghost {
+    @apply gap-1 rounded-none px-1 py-1 text-wine;
+  }
+  .btn-ghost::after {
+    content: "→";
+    @apply transition-transform duration-300 ease-soft;
+  }
+  .btn-ghost:hover::after {
+    transform: translateX(4px);
+  }
+
+  .photo-slot {
+    @apply relative isolate flex items-center justify-center overflow-hidden rounded-md;
+    background: linear-gradient(155deg, #f6dbe1 0%, #efc3cd 45%, #e9d3c8 100%);
+  }
+  .photo-slot::before {
+    content: "";
+    @apply absolute inset-0 opacity-50;
+    background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0 2px, transparent 2px 14px);
+  }
+  .photo-slot__label {
+    @apply relative z-[2] rounded-sm border border-dashed border-wine/35 bg-white/35 px-4 py-3 text-center font-body text-xs font-bold uppercase tracking-[0.14em] text-wine/70;
+  }
+  .photo-slot img {
+    @apply absolute inset-0 h-full w-full object-cover;
+  }
+
+  .pair-badge {
+    @apply inline-flex items-center gap-2 rounded-full border border-wine/15 bg-white/50 px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] text-wine;
+  }
+
+  .container-page {
+    @apply mx-auto w-full max-w-container px-5 sm:px-8 lg:px-[4.5rem];
+  }
+
+  /* CareScene: palavra grande ganha destaque quando cruza o centro da tela */
+  .care-word {
+    @apply text-white-warm/50 transition-all duration-700 ease-soft;
+  }
+  .care-desc {
+    @apply text-white-warm/0 transition-opacity duration-700 ease-soft;
+  }
+  .care-item.is-active .care-word {
+    @apply translate-x-1.5 text-white-warm opacity-100;
+  }
+  .care-item.is-active .care-desc {
+    @apply text-white-warm/80;
+  }
+}
+
+/* Movimento reduzido: o site precisa fazer sentido sem animações */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html.reduce-motion [data-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+}

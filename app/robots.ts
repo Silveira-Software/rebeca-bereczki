@@ -4,7 +4,7 @@ const SITE_URL = "https://SEU-DOMINIO-AQUI.com.br";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: { userAgent: "*", allow: "/" },
+    rules: { userAgent: "*", allow: "/", disallow: ["/painel", "/api"] },
     sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }

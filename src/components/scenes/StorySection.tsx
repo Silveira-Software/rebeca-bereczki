@@ -20,9 +20,8 @@ export default function StorySection() {
             <p className="eyebrow">{profile.story.eyebrow}</p>
           </Reveal>
           <Reveal type="blur">
-            <h2 id="sobre-heading" className="mt-4 max-w-[16ch] font-display text-lg font-normal leading-tight text-wine">
-              Antes de existir a <em className="italic-emotional text-accent-deep">Dra. Rebeca</em>, já existia
-              alguém que parava para cuidar.
+            <h2 id="sobre-heading" className="mt-4 max-w-[18ch] font-display text-lg font-normal leading-tight text-wine">
+              {profile.story.quote}
             </h2>
           </Reveal>
 

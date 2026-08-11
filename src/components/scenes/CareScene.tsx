@@ -44,7 +44,7 @@ export default function CareScene() {
       <div className="container-page">
         <p className="eyebrow text-accent-soft">{profile.care.eyebrow}</p>
         <h2 id="cuidado-heading" className="sr-only">
-          Como ela cuida: observar, ouvir, acolher, examinar, cuidar e acompanhar
+          Como eu cuido: observar, ouvir, acolher, examinar, cuidar e acompanhar
         </h2>
         <p className="lede mt-3 text-white-warm/75">{profile.care.intro}</p>
 

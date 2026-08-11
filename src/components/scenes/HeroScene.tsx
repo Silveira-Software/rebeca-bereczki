@@ -112,15 +112,15 @@ export default function HeroScene() {
           </p>
 
           <p data-hero-fade className="mt-6 max-w-[30ch] font-display text-md text-graphite">
-            Medicina com técnica. <em className="italic-emotional text-accent-deep">Cuidado com amor.</em>
+            Medicina veterinária com técnica. <em className="italic-emotional text-accent-deep">Cuidado com amor.</em>
           </p>
 
           <div data-hero-fade className="mt-10 flex flex-wrap gap-4">
-            <a href="#contato" className="btn btn-primary">
-              Falar com a Dra. Rebeca
+            <a href="/#contato" className="btn btn-primary">
+              {profile.hero.ctaPrimary}
             </a>
             <a href={profile.links.instagram} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
-              Acompanhar no Instagram
+              {profile.hero.ctaSecondary}
             </a>
           </div>
         </div>
@@ -128,7 +128,7 @@ export default function HeroScene() {
         <div ref={photoRef} className="relative md:col-span-5">
           <PhotoSlot
             src={profile.photos.hero}
-            alt={`${profile.name} — retrato principal`}
+            alt={`${profile.name} — retrato principal, minha apresentação`}
             label={"[FOTO REBECA HERO]\ncomposição vertical, 3:4, luz suave"}
             className="aspect-[3/4] rounded-lg rounded-br-[46%] shadow-soft"
             priority

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: `%s | ${profile.name}`,
   },
   description:
-    "Rebeca Fernandes Bereczki, médica veterinária em Osasco, São Paulo. Medicina com técnica, cuidado com amor. Conheça sua trajetória, formação em Medicina Veterinária e áreas de atuação em clínica de pequenos animais.",
+    "Rebeca Fernandes Bereczki, médica veterinária e groomer em Osasco, São Paulo, com 5 anos de experiência na área pet. Conheça minha trajetória, formação, blog sobre cuidados com animais e minhas redes.",
   authors: [{ name: profile.name }],
   robots: { index: true, follow: true },
   alternates: { canonical: "/" },
@@ -39,14 +39,14 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     siteName: profile.name,
     title: `${profile.name} — ${profile.title}`,
-    description: "Medicina com técnica. Cuidado com amor. Conheça a trajetória da médica veterinária Rebeca Fernandes Bereczki.",
+    description: "Medicina veterinária com técnica. Cuidado com amor. Conheça a trajetória da médica veterinária Rebeca Fernandes Bereczki.",
     url: "/",
     images: [{ url: "/images/og-cover.jpg", width: 1200, height: 630, alt: `${profile.name} — ${profile.title}` }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${profile.name} — ${profile.title}`,
-    description: "Medicina com técnica. Cuidado com amor.",
+    description: "Medicina veterinária com técnica. Cuidado com amor.",
     images: ["/images/og-cover.jpg"],
   },
   icons: {
@@ -71,14 +71,14 @@ const personJsonLd = {
   name: profile.name,
   givenName: profile.firstName,
   familyName: "Fernandes Bereczki",
-  jobTitle: profile.title,
-  description: "Médica veterinária formada pela UNINOVE, atuante em clínica de pequenos animais, com vivência prévia como auxiliar veterinária.",
+  jobTitle: "Médica Veterinária e Groomer",
+  description: "Médica veterinária formada pela UNINOVE, com 5 anos de experiência na área pet — atuação clínica em pequenos animais, gestão de pet shop próprio e serviços de grooming.",
   url: SITE_URL,
   image: `${SITE_URL}/images/og-cover.jpg`,
   address: { "@type": "PostalAddress", addressLocality: "Osasco", addressRegion: "SP", addressCountry: "BR" },
   alumniOf: { "@type": "CollegeOrUniversity", name: "UNINOVE" },
-  knowsAbout: ["Medicina Veterinária", "Clínica Veterinária", "Pequenos Animais"],
-  sameAs: [profile.links.linkedin],
+  knowsAbout: ["Medicina Veterinária", "Clínica Veterinária", "Pequenos Animais", "Grooming", "Bem-estar Animal"],
+  sameAs: [profile.links.linkedin].filter((url) => !url.includes("A CONFIRMAR")),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

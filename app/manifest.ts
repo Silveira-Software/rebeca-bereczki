@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: `${profile.name} — ${profile.title}`,
     short_name: "Dra. Rebeca",
-    description: "Medicina com técnica. Cuidado com amor. Site profissional da médica veterinária Rebeca Fernandes Bereczki.",
+    description: "Medicina veterinária com técnica. Cuidado com amor. Site profissional da médica veterinária Rebeca Fernandes Bereczki.",
     start_url: "/",
     scope: "/",
     display: "standalone",

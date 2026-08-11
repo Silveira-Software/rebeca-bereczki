@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 import { profile } from "@/data/profile";
 
 const LINKS = [
-  { href: "#sobre", label: "Sobre" },
-  { href: "#cuidado", label: "Cuidado" },
-  { href: "#momentos", label: "Momentos" },
-  { href: "#medicina", label: "Medicina" },
-  { href: "#experiencia", label: "Experiência" },
+  { href: "/#sobre", label: "Sobre" },
+  { href: "/#momentos", label: "Momentos" },
+  { href: "/#redes", label: "Redes" },
+  { href: "/#servicos", label: "Serviços" },
+  { href: "/blog", label: "Blog" },
+  { href: "/#experiencia", label: "Experiência" },
 ];
 
 export default function Nav() {
@@ -28,13 +29,13 @@ export default function Nav() {
         scrolled ? "bg-white-warm/85 shadow-[0_1px_0_rgba(62,15,31,0.06)] backdrop-blur-md" : ""
       }`}
     >
-      <a href="#hero" className="font-display text-lg font-semibold text-wine">
+      <a href="/#hero" className="font-display text-lg font-semibold text-wine">
         Rebeca<span className="text-accent">.</span> Bereczki
       </a>
 
       <nav aria-label="Navegação principal" className="hidden items-center gap-8 md:flex">
         {LINKS.map((link) => (
-          <a
+          
             key={link.href}
             href={link.href}
             className="text-xs font-semibold uppercase tracking-[0.14em] text-graphite/75 transition-opacity hover:text-accent-deep hover:opacity-100"
@@ -42,7 +43,7 @@ export default function Nav() {
             {link.label}
           </a>
         ))}
-        <a href="#contato" className="rounded-full border border-wine px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-graphite">
+        <a href="/#contato" className="rounded-full border border-wine px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-graphite">
           Contato
         </a>
       </nav>
@@ -64,7 +65,7 @@ export default function Nav() {
           className="absolute inset-x-0 top-full flex flex-col items-start gap-5 bg-white-warm px-5 py-6 shadow-card md:hidden"
         >
           {LINKS.map((link) => (
-            <a
+            
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
@@ -73,7 +74,7 @@ export default function Nav() {
               {link.label}
             </a>
           ))}
-          <a href="#contato" onClick={() => setOpen(false)} className="text-xs font-semibold uppercase tracking-[0.14em] text-accent-deep">
+          <a href="/#contato" onClick={() => setOpen(false)} className="text-xs font-semibold uppercase tracking-[0.14em] text-accent-deep">
             Contato
           </a>
         </nav>

@@ -1,7 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import { profile } from "@/data/profile";
 import Reveal from "@/components/ui/Reveal";
+import BookingModal from "@/components/booking/BookingModal";
 
 export default function ServicesScene() {
+  const [bookingOpen, setBookingOpen] = useState(false);
+
   return (
     <section id="servicos" aria-labelledby="servicos-heading" className="scroll-mt-24 bg-white-warm py-24 sm:py-32">
       <div className="container-page">
@@ -27,11 +33,13 @@ export default function ServicesScene() {
         </Reveal>
 
         <Reveal className="mt-12">
-          <a href="/#contato" className="btn btn-primary">
+          <button onClick={() => setBookingOpen(true)} className="btn btn-primary">
             {profile.services.ctaLabel}
-          </a>
+          </button>
         </Reveal>
       </div>
+
+      <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
     </section>
   );
 }

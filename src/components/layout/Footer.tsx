@@ -8,6 +8,14 @@ export default function Footer() {
         © {year} {profile.name} — {profile.title}.
       </span>
       <span className="confirm-tag">Alguns dados deste site são placeholders e serão atualizados conforme confirmação.</span>
+      <a
+        href="https://silveira-software.vercel.app"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-muted transition-colors hover:text-accent-deep"
+      >
+        made by @kaduapps
+      </a>
     </footer>
   );
 }

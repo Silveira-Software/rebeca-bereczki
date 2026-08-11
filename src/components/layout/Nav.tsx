@@ -35,7 +35,7 @@ export default function Nav() {
 
       <nav aria-label="Navegação principal" className="hidden items-center gap-8 md:flex">
         {LINKS.map((link) => (
-          
+          <a
             key={link.href}
             href={link.href}
             className="text-xs font-semibold uppercase tracking-[0.14em] text-graphite/75 transition-opacity hover:text-accent-deep hover:opacity-100"
@@ -65,7 +65,7 @@ export default function Nav() {
           className="absolute inset-x-0 top-full flex flex-col items-start gap-5 bg-white-warm px-5 py-6 shadow-card md:hidden"
         >
           {LINKS.map((link) => (
-            
+            <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}

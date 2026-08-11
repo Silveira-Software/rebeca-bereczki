@@ -14,7 +14,7 @@ export default function ContactScene() {
           Contato
         </h2>
 
-        <Reveal stagger className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <Reveal stagger className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           <div className="rounded-lg border border-white-warm/15 bg-white-warm/5 p-10 backdrop-blur-sm">
             <p className="signature-pair !text-accent-soft">{profile.signaturePairs[0]}</p>
             <h3 className="mt-3 text-lg text-white-warm">{profile.contact.clinics.heading}</h3>
@@ -35,6 +35,20 @@ export default function ContactScene() {
               className="btn btn-outline mt-8 !border-white-warm/40 !text-white-warm hover:!bg-white-warm/10"
             >
               {profile.contact.tutors.ctaLabel}
+            </a>
+          </div>
+
+          <div className="rounded-lg border border-white-warm/15 bg-white-warm/5 p-10 backdrop-blur-sm">
+            <p className="signature-pair !text-accent-soft">{profile.signaturePairs[2]}</p>
+            <h3 className="mt-3 text-lg text-white-warm">{profile.contact.whatsapp.heading}</h3>
+            <p className="mt-2 max-w-[34ch] text-white-warm/75">{profile.contact.whatsapp.text}</p>
+            <a
+              href={`https://wa.me/${profile.links.whatsapp.replace(/\D/g, "")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline mt-8 !border-white-warm/40 !text-white-warm hover:!bg-white-warm/10"
+            >
+              {profile.contact.whatsapp.ctaLabel}
             </a>
           </div>
         </Reveal>

@@ -24,7 +24,7 @@ export default function FinalScene() {
         <a href={profile.links.instagram} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
           Instagram
         </a>
-        <a href="#contato" className="btn btn-ghost">
+        <a href="/#contato" className="btn btn-ghost">
           Contato
         </a>
       </div>
